@@ -98,7 +98,7 @@ function drawBall() {
 }
 
 // Iscrtaj cigle
-// Ponovno sa dcije petlje iscrtavamo cigle na ekran
+// Ponovno sa dvije petlje iscrtavamo cigle na ekran
 // Cigla će biti iscrtana ako nije udarena
 // Svakojh cigli dodajemo sjenu na isti način kao i palici, samo što ima veću prozirnost
 function drawBricks() {
@@ -139,7 +139,7 @@ function drawScore() {
 // Ako je pozicija lopte na srkoz desnoj strani ekrana, onda joj x koordinata u zbroju sa polumjerom ne smije biti veća od širine ekrana
 // Ako je pozicija lopte na krajnje gornjem rubu ekrana, onda joj y koordinata od koje oduzmemo polumjer mora biti manja od 0
 // Koliziju sa palicom detektiramo sa slično matematikom, samo što ne uzimamo širinu ekrana već poziciju i širinu ili visinu palice
-// Kolizije sa ciglama detektiramo na isti način uz dodatak povećavanja rezultat za svaki udar s ciglom i podešavanja hit svojstva te cigle
+// Kolizije sa ciglama detektiramo na isti način uz dodatak povećavanja rezultata za svaki udar s ciglom i podešavanja hit svojstva te cigle
 function detectCollisions() {
   // Lopta i zidovi
   if (ball.x + ball.radius > canvas.width || ball.x - ball.radius < 0) {
@@ -186,7 +186,7 @@ function detectCollisions() {
     });
   });
 
-  // uvijet za kraj igre (ako je y koordinata lopte+polumjer lopte veće od ukupne visine ekrana, to znači da je lopta udarila od donji rub)
+  // Uvjet za kraj igre (ako je y koordinata lopte+polumjer lopte veće od ukupne visine ekrana, to znači da je lopta udarila od donji rub)
   if (ball.y + ball.radius > canvas.height) {
     isGameOver = true;
     alert("GAME OVER");
@@ -206,7 +206,7 @@ function updateBall() {
   ball.y += ball.dy;
 }
 
-// iscrtaj sve elemente
+// Iscrtaj sve elemente
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawPaddle();
